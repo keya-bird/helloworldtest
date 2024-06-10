@@ -1,5 +1,6 @@
-console.log("Hello, world!");
+const hello = require('./index');
 
-module.exports = function sayHello() {
-  return "Hello, world!";
-};
+// Test will fail because it expects "Hello There" instead of "Hello, world!"
+test('should say hello world', () => {
+  expect(hello()).toBe('Hello There');
+});
